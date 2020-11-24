@@ -20,7 +20,25 @@ output: 4
 
 function secondLargest(angka) {
   // Code here
-  
+  let terbesar = angka[0];
+  for (let i = 0; i < angka.length; i++) {
+    if (terbesar < angka[i]) {
+      terbesar = angka[i];
+    }
+  }
+
+  // let secondLarge;
+  // let nilai = terbesar;
+
+  // for (let i = 0; i < angka.length; i++){
+  //   const hasilKurang = terbesar - angka[i]
+  //   // console.log(hasilKurang)
+  //   if (hasilKurang !== 0 && nilai > hasilKurang){
+  //     nilai = hasilKurang;
+  //     secondLarge = angka[i]
+  //   }
+  // }
+  // return secondLarge
 }
 
 // TEST CASES
