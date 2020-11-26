@@ -30,21 +30,42 @@ ex: Mr. *****, Mrs. *****, Ms. *****, Mr. *****
 
 function addTitle(people) {
   // Code here
+  if (!people.length) {
+    console.log("No Data");
+  }
+  for (let i = 0; i < people.length; i++) {
+    if (people[i][1] === "male" && people[i][2] === true) {
+      console.log(`Mr. ${people[i][0]}`);
+    } else if (people[i][1] === "male") {
+      console.log(`Mr. ${people[i][0]}`);
+    } else if (people[i][1] === "female" && people[i][2] === true) {
+      console.log(`Mrs. ${people[i][0]}`);
+    } else if (people[i][1] === "female") {
+      console.log(`Ms. ${people[i][0]}`);
+    }
+  }
 }
 
-console.log(
-  addTitle([
-    ["Sergei", "male", true],
-    ["Alyona", "female", false],
-  ])
-); // Mr. Sergei, Ms. Alyona
+// console.log(
+addTitle([
+  ["Sergei", "male", true],
+  ["Alyona", "female", false],
+]);
+// ); // Mr. Sergei, Ms. Alyona
 
-console.log(
-  addTitle([
-    ["Dimitri", "male", false],
-    ["Anastasia", "female", false],
-    ["Vladlena", "female", true],
-  ])
-); // Mr. Dimitri, Ms. Anastasia, Mrs. Vladlena
+// console.log(
+addTitle([
+  ["Dimitri", "male", false],
+  ["Anastasia", "female", false],
+  ["Vladlena", "female", true],
+]);
+// ); // Mr. Dimitri, Ms. Anastasia, Mrs. Vladlena
 
-console.log(addTitle([])); // No data
+// console.log(
+addTitle([]);
+// ); // No data
+
+// addTitle([
+//   ["Sergei", "male", true],
+//   ["Alyona", "female", false],
+// ]);

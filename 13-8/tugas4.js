@@ -27,6 +27,33 @@ output: ['saya', 'dan', 'suka', 'makan', 'nasi']
 
 function uniqueFinder(sentence) {
   // Code here
+  let tampungan = sentence.toLowerCase();
+  // console.log(tampungan);
+  let arr = [];
+
+  let kata = "";
+  for (let i = 0; i < tampungan.length; i++) {
+    if (tampungan[i] !== " ") {
+      kata += tampungan[i];
+    } else {
+      arr.push(kata);
+      kata = "";
+    }
+  }
+  console.log(arr);
+
+  let final;
+  for (let i = 0; i < arr.length; i++) {
+    let bool = false;
+    if (arr[i] === arr[i + 1]) {
+      bool = true;
+    }
+    if (bool === false) {
+      final.push(arr[i]);
+    }
+  }
+
+  return final;
 }
 
 console.log(uniqueFinder("hello black dragon and hello red dragon")); // ['hello', 'black', 'dragon', 'and', 'red']

@@ -29,13 +29,14 @@ output: [[0], [0]]
 function addEvenOdd(arrNum) {
   // Code here
   let final = [];
-  let arr = [];
+  let hitung;
   for (let i = 0; i < arrNum.length; i += 2) {
-    let hitung = [];
+    let arr = [];
     hitung = arrNum[i] + arrNum[i + 1];
     arr.push(hitung);
+    // console.log(arr);
+    final.push(arr);
   }
-  final.push(arr);
   return final;
 }
 console.log(addEvenOdd([3, 5, 7, 8])); // [ [15], [8] ]
