@@ -28,16 +28,18 @@ output: [[0], [0]]
 
 function addEvenOdd(arrNum) {
   // Code here
-  let final = [];
-  let hitung;
-  for (let i = 0; i < arrNum.length; i += 2) {
+  let genap = 0;
+  let ganjil = 0;
+  for (let i = 0; i < arrNum.length; i++) {
     let arr = [];
-    hitung = arrNum[i] + arrNum[i + 1];
-    arr.push(hitung);
-    // console.log(arr);
-    final.push(arr);
+    if (arrNum[i] % 2 === 0) {
+      genap += arrNum[i];
+    } else {
+      ganjil += arrNum[i];
+    }
   }
-  return final;
+
+  return [[ganjil], [genap]];
 }
 console.log(addEvenOdd([3, 5, 7, 8])); // [ [15], [8] ]
 

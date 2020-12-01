@@ -89,5 +89,6 @@ console.log(
     { operand1: 3, operand2: 10, operator: "+" },
   ])
 );
+// [2, 13]
 
 console.log(calculate([])); //[]

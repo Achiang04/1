@@ -50,9 +50,9 @@ function uniqueFinder(sentence) {
       if (arr[i] === arr[j]) {
         bool = true;
       }
-      console.log("arr i+1", arr[j]);
+      console.log("arr j", arr[j]);
       if (bool === false) {
-        final.push(arr[i]);
+        final.push(arr[j]);
       }
     }
   }
