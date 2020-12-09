@@ -41,27 +41,31 @@ function uniqueFinder(sentence) {
     }
   }
   arr.push(kata);
-  console.log("arr", arr);
+  // console.log("arr", arr);
 
   let final = [];
   for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length; j++) {
-      let bool = false;
-      if (arr[i] === arr[j]) {
+    let bool = false;
+    for (let j = 0; j < final.length; j++) {
+      if (arr[i] === final[j]) {
         bool = true;
       }
-      console.log("arr j", arr[j]);
-      if (bool === false) {
-        final.push(arr[j]);
-      }
     }
+    if (bool === false) {
+      final.push(arr[i]);
+    }
+  }
+  // console.log("final", final);
+
+  if (!sentence.length) {
+    return "NO WORDS";
   }
 
   return final;
 }
 
 console.log(uniqueFinder("hello black dragon and hello red dragon")); // ['hello', 'black', 'dragon', 'and', 'red']
-// console.log(uniqueFinder("hello HELLo hEllO hlloe")); // ['hello', 'hlloe']
-// console.log(uniqueFinder("john is coding and he is coding")); // ['john', 'is', 'coding', 'and', 'he']
-// console.log(uniqueFinder("blue blue red blue violet red violet")); // ['blue', 'red', 'violet']
-// console.log(uniqueFinder("")); // 'NO WORDS'
+console.log(uniqueFinder("hello HELLo hEllO hlloe")); // ['hello', 'hlloe']
+console.log(uniqueFinder("john is coding and he is coding")); // ['john', 'is', 'coding', 'and', 'he']
+console.log(uniqueFinder("blue blue red blue violet red violet")); // ['blue', 'red', 'violet']
+console.log(uniqueFinder("")); // 'NO WORDS'
