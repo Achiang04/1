@@ -24,39 +24,43 @@ Maka akan mengembalikan 4 karena bisa membeli oleh-oleh dengan harga 5000, 10000
 
 */
 
+// function howManyGifts(maxBudget, gifts) {
+//   // Code here
+//   let temp;
+//   let urutan = [];
+//   for (let i = 0; i < gifts.length; i++) {
+//     if (gifts[i] > gifts[i + 1]) {
+//       temp = gifts[i];
+//       gifts[i] = gifts[i + 1];
+//       gifts[i + 1] = temp;
+//     }
+//     urutan.push(gifts[i]);
+//   }
+//   return urutan;
+// }
+
 function howManyGifts(maxBudget, gifts) {
   // Code here
-
-  let urutan;
-  let tampungan = [];
   let temp;
+  let urutan = [];
   for (let i = 0; i < gifts.length; i++) {
-    temp = gifts[i + 1];
-    gifts[i + 1] = gifts[i];
-    gifts[i] = temp;
-
-    tampungan.push(temp);
+    for (let j = 0; j < gifts.length; j++) {
+      console.log(j);
+      console.log("       j", gifts[j]);
+      console.log("                   j + 1", gifts[j + 1]);
+      if (gifts[j] > gifts[j + 1]) {
+        temp = gifts[j];
+        gifts[j] = gifts[j + 1];
+        gifts[j + 1] = temp;
+      }
+      urutan.push(gifts[j]);
+    }
   }
-  console.log("temp", temp);
-  console.log("tampungan", tampungan);
-
-  // let uang = maxBudget;
-  // let counter = 0;
-  // let belanja;
-  // for (let i = 0; i < gifts.length; i++) {
-  //   belanja = uang - gifts[i];
-  //   console.log(belanja);
-  //   if (belanja !== 0 && belanja >= 0) {
-  //     uang = belanja;
-  //     counter++;
-  //   }
-  // }
-  // console.log("counter", counter);
-  // return counter;
+  return urutan;
 }
 
 console.log(howManyGifts(30000, [15000, 12000, 5000, 3000, 10000])); // 4
-console.log(howManyGifts(10000, [2000, 2000, 3000, 1000, 2000, 10000])); // 5
-console.log(howManyGifts(4000, [7500, 1500, 2000, 3000])); // 2
-console.log(howManyGifts(50000, [25000, 25000, 10000, 15000])); // 3
-console.log(howManyGifts(0, [10000, 3000])); // 0
+// console.log(howManyGifts(10000, [2000, 2000, 3000, 1000, 2000, 10000])); // 5
+// console.log(howManyGifts(4000, [7500, 1500, 2000, 3000])); // 2
+// console.log(howManyGifts(50000, [25000, 25000, 10000, 15000])); // 3
+// console.log(howManyGifts(0, [10000, 3000])); // 0
