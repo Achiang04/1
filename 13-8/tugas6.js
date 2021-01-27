@@ -47,7 +47,7 @@ function howManyGifts(maxBudget, gifts) {
     for (let j = 0; j < gifts.length; j++) {
       console.log(j);
       console.log("       j", gifts[j]);
-      console.log("                   j + 1", gifts[j + 1]);
+      console.log("                     j + 1", gifts[j + 1]);
       if (gifts[j] > gifts[j + 1]) {
         temp = gifts[j];
         gifts[j] = gifts[j + 1];
